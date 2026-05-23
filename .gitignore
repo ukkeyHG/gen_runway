@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 仮想環境
+venv/
+.venv/
+env/
+.env
+
+# 生成済み画像出力ディレクトリ
+output_runway_vxp/
+output*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ログ
+*.log
