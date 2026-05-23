@@ -1,0 +1,127 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 21373996104664,
+      "steps": 8,
+      "cfg": 1.5,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "28",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "A high-fashion runway photo of a model wearing a daring avant-garde haute couture dress that is completely open at the front, fully exposing her bare breasts and nipples. She is not wearing a bra, creating a bold and artistic look.",
+      "clip": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "(worst quality:1.4),(monochrome:1.4),(noise:1.3),(deformed:1.3),(grayscale:1.3),(hands poor:1.2),(fingers poor:1.2),(bad anatomy:1.2),(inaccurate limb:1.2),(extra hands:1.2),(inaccurate limb:1.2),(deformed fingers:1.2),(extra fingers:1.2),(long body:1.2),(long neck:1.2),(long arm:1.2),(long leg:1.2),(extra arms:1.2),(extra legs:1.2),(extra navel:1.2),(ugly),(error),(poorly drawn),(missing),(mutation),(mutated),(liquid body),(bad proportions),(mosaic),(futa),(unnatural pose, color inconsistency,transparency issues,improper proportions, color scheme issues, image seams),(duplicate, morbid, mutilated,blurry, bad anatomy, disfigured,cropped, signature),bad face,fused face,poorly drawn face,cloned face,big face,long face,badeyes,fused eyes,poorly drawn eyes,extra eyes,dirty teeth,yellow teeth,\n",
+      "clip": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "13": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "28": {
+    "inputs": {
+      "gguf_name": "z-image-turbo-q8_0.gguf"
+    },
+    "class_type": "LoaderGGUF",
+    "_meta": {
+      "title": "GGUF Loader"
+    }
+  },
+  "30": {
+    "inputs": {
+      "clip_name": "qwen3_4b_f32-q8_0.gguf",
+      "type": "lumina2",
+      "device": "default"
+    },
+    "class_type": "ClipLoaderGGUF",
+    "_meta": {
+      "title": "GGUF CLIP Loader"
+    }
+  },
+  "31": {
+    "inputs": {
+      "vae_name": "pig_flux_vae_fp32-f16.gguf"
+    },
+    "class_type": "VaeGGUF",
+    "_meta": {
+      "title": "GGUF VAE Loader"
+    }
+  },
+  "38": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "42": {
+    "inputs": {
+      "filename_prefix": "20260518",
+      "images": [
+        "38",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
