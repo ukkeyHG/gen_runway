@@ -32,3 +32,6 @@ Thumbs.db
 
 # ログ
 *.log
+
+# Runway Slideshow (Generated local files)
+runway_show.html
